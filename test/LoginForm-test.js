@@ -13,19 +13,19 @@ describe('<LoginForm />', () => {
     spy.reset();
   });
 
-  // describe('Saving input values in state', () => {
-  //   it('should save the username in state when the input changes', () => {
-  //     const wrapper = shallow(<LoginForm />);
-  //     wrapper.find('#test-username').simulate('change', { target: { value: 'johndoe' } });
-  //     expect(isValueInState(wrapper.state(), 'johndoe'), 'The username input value is not being saved in the state').to.be.true;
-  //   });
-  //
-  //   it('should save the password in state when the input changes', () => {
-  //     const wrapper = shallow(<LoginForm />);
-  //     wrapper.find('#test-password').simulate('change', { target: { value: 'supersecret' } });
-  //     expect(isValueInState(wrapper.state(), 'supersecret'), 'The password input value is not being saved in the state').to.be.true;
-  //   });
-  // });
+  describe('Saving input values in state', () => {
+    it('should save the username in state when the input changes', () => {
+      const wrapper = shallow(<LoginForm />);
+      wrapper.find('#test-username').simulate('change', { target: { value: 'johndoe' } });
+      expect(isValueInState(wrapper.state(), 'johndoe'), 'The username input value is not being saved in the state').to.be.true;
+    });
+
+    it('should save the password in state when the input changes', () => {
+      const wrapper = shallow(<LoginForm />);
+      wrapper.find('#test-password').simulate('change', { target: { value: 'supersecret' } });
+      expect(isValueInState(wrapper.state(), 'supersecret'), 'The password input value is not being saved in the state').to.be.true;
+    });
+  });
 
   describe('Calling `onSubmit` callback prop', () => {
     it('should call the prevent the default action when the form is being submitted', () => {
